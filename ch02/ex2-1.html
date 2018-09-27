@@ -1,0 +1,16 @@
+<!-- Listing 2.1  Using the Universal selector with jQuery -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jQuery in Action, 3rd edition</title>
+  </head>
+  <body>
+    <p>I'm a paragraph</p>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+      window.jQuery || document.write('<script src="../js/jquery-1.11.3.min.js"><\/script');
+      var $allElements = $('*');
+    </script>
+  </body>
+</html>

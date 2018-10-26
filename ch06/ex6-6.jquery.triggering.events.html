@@ -1,0 +1,47 @@
+<!-- Listing 6.6  Triggering events in jQuery -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Triggering Events - jQuery in Action, 3rd edition</title>
+    <link rel="stylesheet" href="../css/main.css"/>
+    <style>
+      #wrapper
+      {
+	border: 1px solid #3A5895;
+	padding: 10px;
+      }
+      #address:focus
+      {
+	border: 3px solid #000000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <button id="btn">Click me!</button>
+      <input type="text" id="address" />
+    </div>
+    
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script>
+      $('#wrapper')
+	.on('focus', function () {
+	  console.log('Div focused');
+	})
+	.on('click', function () {
+	  console.log('Div clicked');
+	});
+      $('#address')
+	.on('focus', function() {
+	  console.log('Input focused');
+	})
+	.triggerHandler('focus');
+      $('#btn')
+	.on('click', function () {
+	  console.log('Button clicked');
+	})
+	.trigger('click');
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!-- Listing 9.2  Using the $.noConfilict() method -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Using $.noConflict()</title>
+    <link rel="stylesheet" href="../css/main.css"/>
+  </head>
+  <body>
+    <script>
+      window.$ = {
+	customLog: function(message) {
+	  console.log('The function says: ' + message);
+	}
+      };
+    </script>
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script>
+      console.log('customLog: ' + ($.customLog === undefined));
+      $.noConflict();
+      console.log('customLog: ' + ($.customLog === undefined));
+      $.customLog('Old value restored!');
+    </script>
+  </body>
+</html>

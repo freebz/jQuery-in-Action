@@ -1,0 +1,24 @@
+<!-- Listing 10.6  Dynamically loading a script file and examining the results -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>$.getScript() Example</title>
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <button id="load-button">Load</button>
+    <button id="inspect-button">Inspect</button>
+
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script>
+      $('#load-button').click(function() {
+	$getScript('external.js');
+      });
+
+      $('#inspect-button').click(function() {
+	someFunction(someVariable);
+      });
+    </script>
+  </body>
+</html>

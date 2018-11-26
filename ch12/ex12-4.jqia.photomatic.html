@@ -1,0 +1,58 @@
+<!-- Listing 12.4  The test page that creates the Photomatic display in figure 12.2 -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Jqia Photomatic - jQuery in Action, 3rd edition</title>
+    <link rel="stylesheet" href="../css/main.css"/>
+    <link rel="stylesheet" href="../css/jquery.jqia.photomatic.css"/>
+  </head>
+  <body>
+    <h1 class="header">Jqia Photomatic</h1>
+
+    <div id="thumbnais-pane">
+      <img src="../images/thumbnais/img_1.jpg" alt="" />
+      <img src="../images/thumbnais/img_2.jpg" alt="" />
+      <img src="../images/thumbnais/img_3.jpg" alt="" />
+      <img src="../images/thumbnais/img_4.jpg" alt="" />
+      <img src="../images/thumbnais/img_5.jpg" alt="" />
+      <img src="../images/thumbnais/img_6.jpg" alt="" />
+      <img src="../images/thumbnais/img_7.jpg" alt="" />
+      <img src="../images/thumbnais/img_8.jpg" alt="" />
+      <img src="../images/thumbnais/img_9.jpg" alt="" />
+      <img src="../images/thumbnais/img_10.jpg" alt="" />
+      <img src="../images/thumbnais/img_11.jpg" alt="" />
+      <img src="../images/thumbnais/img_12.jpg" alt="" />
+    </div>
+
+    <div>
+      <img id="photo-display" sr="" title="Click for next photo" />
+    </div>
+
+    <div id="button-bar">
+      <img src="../images/button.first.png" id="first-button"
+	   alt="First photo" />
+      <img src="../images/button.previous.png" id="previous-button"
+	   alt="Previous photo" />
+      <img src="../images/button.play.png" id="play-button"
+	   alt="Next photo" />
+      <img src="../images/button.last.png" id="last-button"
+	   alt="Last photo" />
+    </div>
+
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script src="../js/jquery.jqia.photomatic.js"></script>
+    <script>
+      $('#thumbnails-pane img').jqiaPhotomatic({
+	photoElement: '#photo-display',
+	previousContorl: '#previous-button',
+	nextControl: '#next-button',
+	firstControl: '#first-button',
+	lastControl: '#last-button',
+	playControl: '#play-button',
+	delay: 1000
+      });
+    </script>
+  </body>
+</html>

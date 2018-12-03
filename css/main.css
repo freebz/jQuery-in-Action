@@ -1,0 +1,33 @@
+.bar,
+.inner-bar
+ {
+     height: 50px;
+     border-radius: 3px;
+ }
+
+.bar
+{
+    position: relative;
+    border: 1px solid #000000;
+    background-color: #CCCCCC;
+}
+
+.inner-bar
+{
+    width: 0%;
+    background-color: #F72F39;
+}
+
+.progress
+{
+    position: absolute;
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+    top: 10px;
+}
+
+button
+{
+    margin-top: 15px;
+}

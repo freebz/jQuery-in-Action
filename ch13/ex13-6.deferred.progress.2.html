@@ -1,0 +1,57 @@
+<!-- Listing 13.6  Using deferred.progress(), version 2 -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Using deferred.progress() version 2</title>
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body>
+    <div class="bar">
+      <div class="inner-bar"></div>
+      <span class="progress">0%</span>
+    </div>
+
+    <button id="run-button">Run animation</button>
+
+    <script src="../js/jquery-1.11.3.min.js"></script>
+    <script>
+      function animate(milliseconds) {
+	var $innerBar = $('.inner-bar').width(0);
+	var $barWidth = $('.bar').width();
+	var step = $barWidth / 100;
+
+	var deferred = $.Deferred();
+	var idInterval = setInterval(
+	  function () {
+	    // Can't use width() to retrieve the width because
+	    // of issue #1724
+	    // (https://github.com/jquery/jquery/issues/1724)
+	    var nextWidth =
+	      parseFloat($innerBar.get(0).style.width) + step;
+	    deferred.notify(nextWidth * 100 / $barWidth);
+	    $innerBar.width(nextWidth);
+	    if (nextWidth >= $barWidth) {
+	      deferred.resolve();
+	      clearInterval(idInterval);
+	    }
+	  },
+	  milliseconds / 100
+	);
+
+	return deferred.promise();
+      }
+
+      $('#run-button').click(function() {
+	animate(1000)
+	  .progress(function(value) {
+	    $('.progress').text(Math.floor(value) + '%');
+	  })
+	  .done(function() {
+	    alert('The process is completed');
+	  });
+      });
+    </script>
+  </body>
+</html>

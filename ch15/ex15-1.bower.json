@@ -1,0 +1,18 @@
+// Listing 15.1  An example of a bower.json file
+
+{
+    "name": "jqia-context-menu",
+    "version": "1.0.0",
+    "authors": [
+	"jqia-team <test@test.com>"
+    ],
+    "description": "A jQuery plugin to show a custom context menu on one or
+       more specified elements of a page.",
+    "main": "src/jqia-context-menu.js",
+    "keywords": [
+	"jQuery",
+	"plugin",
+	"context-menu"
+    ],
+    "license": "MIT"
+}
